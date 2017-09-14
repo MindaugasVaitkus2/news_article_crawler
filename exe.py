@@ -2,8 +2,8 @@ from models import crawler, create_log, connectPSQL, ts
 from sqlalchemy.sql import select
 
 if __name__ == '__main__':
-    target_cat = [1, 4]
-    max_page = 1
+    target_cat = [1, 2, 3, 4, 5, 6, 7, 8]
+    max_page = 100
     logger = create_log("./models/logger")
     db_inst = connectPSQL()
     con = db_inst.engine.connect()

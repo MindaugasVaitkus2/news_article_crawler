@@ -1,2 +1,3 @@
 # article_scraping
-Scrape gunosy article
+- Scrape gunosy article
+- accumlate to postgres SQL by sqlalchemy
