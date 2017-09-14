@@ -32,7 +32,7 @@ class connectPSQL:
     def __init__(self):
         info = {
             'host': 'localhost',
-            'user': 'Asahi',
+            'user': 'asahi',
             'port': 5432,
             'db': 'c_works'  # postgres
         }

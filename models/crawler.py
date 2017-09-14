@@ -64,7 +64,8 @@ def crawler(logger, max_page=100,
                 # logger.info("[NOT FOUND] %s" % html[1])
                 continue
             # MAIN PROCESS (accumlate vectorize text data)
-            bsObj = BeautifulSoup(html[1], "html5lib")
+            # bsObj = BeautifulSoup(html[1], "html5lib")
+            bsObj = BeautifulSoup(html[1])
             bsObj = bsObj.findAll("div", {"class": "list_content"})
             if len(bsObj) is 0:
                 logger.info("Category:%s, Page:%s  [NOT FOUND]" % (c, p))
@@ -78,7 +79,8 @@ def crawler(logger, max_page=100,
                     # logger.info("[NOT FOUND] %s" % html[1])
                     continue
                 # scrape article
-                bsObj = BeautifulSoup(html[1], "html5lib")
+                # bsObj = BeautifulSoup(html[1], "html5lib")
+                bsObj = BeautifulSoup(html[1])
                 bs_ = bsObj.find("div", {"class": "article_header_text"})
                 title = bs_.h1.get_text().replace("'", " ").replace('"', " ")
                 bs_ = bsObj.find("li", {"class": "article_header_lead_date"})
