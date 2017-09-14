@@ -13,7 +13,7 @@ def html_text(url, encoding="UTF-8", trial=3):
             r = requests.get(url)
             r.encoding = encoding
             return True, r.text
-        except ConnectionError:
+        ooexcept ConnectionError:
             pass
     return False, url
 

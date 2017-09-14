@@ -3,7 +3,8 @@ from sqlalchemy.sql import select
 
 if __name__ == '__main__':
 
-    target_cat = [1, 2, 3, 4, 5, 6, 7, 8]
+    # target_cat = [1, 2, 3, 4, 5, 6, 7, 8]
+    target_cat = [1, 2]
     max_page = 5
     logger = create_log("./models/logger")
     db_inst = connectPSQL()
@@ -19,8 +20,8 @@ if __name__ == '__main__':
                 ts.article_categories.category_ind == t).delete()
             db_inst.session.commit()
 
-        df_art, df_time = crawler(logger, max_page=max_page, categories=target_cat,
-                                  update_time=time)
+        df_art, df_time = crawler(logger, max_page=max_page,
+                                  categories=target_cat, update_time=time)
 
         logger.info("inserting data shaped "+str(df_art.shape))
         df_art.to_sql(ts.article_contents.__tablename__, db_inst.engine,
