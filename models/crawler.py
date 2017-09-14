@@ -113,5 +113,5 @@ def crawler(logger, engine, max_page=100,
     #                                 "contents"])
     time = pd.DataFrame(time, columns=["category_ind", "update_time"])
     logger.info("inserting time shaped "+str(df_time.shape))
-    df_time.to_sql(ts.article_categories.__tablename__, engine,
-                   if_exists='append', index=False)
+    time.to_sql(ts.article_categories.__tablename__, engine,
+                if_exists='append', index=False)
