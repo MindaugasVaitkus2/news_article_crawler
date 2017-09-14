@@ -18,7 +18,7 @@ def html_text(url, encoding="UTF-8", trial=3):
     return False, url
 
 
-def crawler(logger, engin, max_page=100,
+def crawler(logger, engine, max_page=100,
             categories=[1, 2, 3, 4, 5, 6, 7, 8],
             update_time=None):
     """
