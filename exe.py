@@ -24,9 +24,9 @@ if __name__ == '__main__':
                 categories=target_cat, update_time=time,
                 engine=db_inst.engine)
 
-        logger.info("inserting data shaped "+str(df_art.shape))
-        df_art.to_sql(ts.article_contents.__tablename__, db_inst.engine,
-                      if_exists='append', index=False)
+        # logger.info("inserting data shaped "+str(df_art.shape))
+        # df_art.to_sql(ts.article_contents.__tablename__, db_inst.engine,
+        #               if_exists='append', index=False)
 
     except Exception as err:
         logger.error(err)
