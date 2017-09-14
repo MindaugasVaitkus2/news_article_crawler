@@ -18,9 +18,9 @@ class article_categories_names(Base):
 
 class article_contents(Base):
     __tablename__ = 'article_contents'
-    date = Column(DateTime)
+    date = Column(DateTime, primary_key=True)
     category_ind = Column(Integer, primary_key=True)
-    title = Column(String, nullable=False, primary_key=True)
+    title = Column(String, nullable=False)
     contents = Column(String, nullable=False)
 
 

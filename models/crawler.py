@@ -5,7 +5,7 @@ import pandas as pd
 
 from bs4 import BeautifulSoup
 from datetime import datetime as dt
-
+from .db.table_scheme import table_scheme as ts
 
 def html_text(url, encoding="UTF-8", trial=3):
     for t in range(trial):
@@ -18,7 +18,7 @@ def html_text(url, encoding="UTF-8", trial=3):
     return False, url
 
 
-def crawler(logger, max_page=100,
+def crawler(logger, engin, max_page=100,
             categories=[1, 2, 3, 4, 5, 6, 7, 8],
             update_time=None):
     """
@@ -50,7 +50,7 @@ def crawler(logger, max_page=100,
     logger.info("max page:"+str(max_page))
 
     # main loop
-    dat = []
+    # dat = []
     time = []
     for c, u_time in zip(categories, update_time):
         p = 0
@@ -98,10 +98,20 @@ def crawler(logger, max_page=100,
                 if u_time >= published_date:
                     break
                 else:
-                    dat.append([published_date, c, title, text])
+                    df = pd.DataFrame([published_date, c, title, text],
+                                      index=["date", "category_ind", "title",
+                                             "contents"]).T
+                    try:
+                        df.to_sql(ts.article_contents.__tablename__, engine,
+                                  if_exists='append', index=False)
+                    except Exception as err:
+                        logger.error(err)
+                    # dat.append([published_date, c, title, text])
 
         time.append([c, dt.today().isoformat()])
-    df = pd.DataFrame(dat, columns=["date", "category_ind", "title",
-                                    "contents"])
+    # df = pd.DataFrame(dat, columns=["date", "category_ind", "title",
+    #                                 "contents"])
     time = pd.DataFrame(time, columns=["category_ind", "update_time"])
-    return df, time
+    logger.info("inserting time shaped "+str(df_time.shape))
+    df_time.to_sql(ts.article_categories.__tablename__, engine,
+                   if_exists='append', index=False)

@@ -20,14 +20,13 @@ if __name__ == '__main__':
                 ts.article_categories.category_ind == t).delete()
             db_inst.session.commit()
 
-        df_art, df_time = crawler(logger, max_page=max_page,
-                                  categories=target_cat, update_time=time)
+        crawler(logger, max_page=max_page,
+                categories=target_cat, update_time=time,
+                engine=db_inst.engine)
 
         logger.info("inserting data shaped "+str(df_art.shape))
         df_art.to_sql(ts.article_contents.__tablename__, db_inst.engine,
                       if_exists='append', index=False)
-        logger.info("inserting time shaped "+str(df_time.shape))
-        df_time.to_sql(ts.article_categories.__tablename__, db_inst.engine,
-                       if_exists='append', index=False)
+
     except Exception as err:
         logger.error(err)
