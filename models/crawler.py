@@ -5,7 +5,7 @@ import pandas as pd
 
 from bs4 import BeautifulSoup
 from datetime import datetime as dt
-from .db.table_scheme import table_scheme as ts
+from .db import table_scheme as ts
 
 def html_text(url, encoding="UTF-8", trial=3):
     for t in range(trial):
