@@ -21,7 +21,7 @@ class article_contents(Base):
     date = Column(DateTime)
     category_ind = Column(Integer)
     title = Column(String, nullable=False, primary_key=True)
-    contents = Column(String, nullable=False)
+    contents = Column(String, nullable=False, primary_key=True)
 
 
 if __name__ == '__main__':

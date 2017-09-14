@@ -10,7 +10,13 @@ import os
 
 
 def create_log(name):
-    """Logging."""
+    """Logging.
+
+     Usage
+    -------------------
+    logger.info(message)
+    logger.error(error)
+    """
     if os.path.exists(name):
         os.remove(name)
     logger = logging.getLogger(name)
