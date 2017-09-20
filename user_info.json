@@ -1,6 +1,6 @@
 {
   "host": "localhost",
-  "user": "asahi",
+  "user": "Asahi",
   "port": 5432,
   "db": "c_works"
 }
