@@ -5,8 +5,8 @@ from sqlalchemy.sql import select
 
 if __name__ == '__main__':
 
-    # target_cat = [1, 2, 3, 4, 5, 6, 7, 8]
-    target_cat = [1, 2]
+    target_cat = [1, 2, 3, 4, 5, 6, 7, 8]
+    # target_cat = [1, 2]
     max_page = 5
 
     _p = drn(abp(__file__))

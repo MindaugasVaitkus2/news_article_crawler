@@ -3,3 +3,5 @@ __pycache__/
 *.ipynb_checkpoints
 nohup.out
 .env
+logger
+user_info.json
