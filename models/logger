@@ -1,7 +1,5 @@
-H1, 2017-09-11 22:02:17,978     INFO category:[1, 4]
-H1, 2017-09-11 22:02:17,978     INFO update time:['2016-01-01T00:00:00', '2016-01-01T00:00:00']
-H1, 2017-09-11 22:02:17,978     INFO max page:1
-H1, 2017-09-11 22:02:17,978     INFO Category:1,Page:1
-H1, 2017-09-11 22:02:27,012     INFO Category:4,Page:1
-H1, 2017-09-11 22:02:31,822     INFO inserting data shaped (40, 4)
-H1, 2017-09-11 22:02:31,870     INFO inserting time shaped (2, 2)
+H1, 2017-09-20 15:34:14,325     INFO category:[1, 2]
+H1, 2017-09-20 15:34:14,326     INFO update time:['2017-09-11T22:02:27.012307', '2016-01-01T00:00:00']
+H1, 2017-09-20 15:34:14,326     INFO max page:5
+H1, 2017-09-20 15:34:14,326     INFO Category:1,Page:1
+H1, 2017-09-20 15:34:19,320     INFO Category:1,Page:2
