@@ -1,3 +1,5 @@
+import json
+from os.path import dirname as drn, abspath as abp
 import pandas as pd
 from models import connectPSQL, ts
 
@@ -35,7 +37,10 @@ def insert_catname(con):
 
 
 if __name__ == '__main__':
-    con = connectPSQL()
+    _p = drn(abp(__file__))
+    with open(_p+'/user_info.json') as f:
+        info = json.load(f)
+    con = connectPSQL(info)
     con.create_tables()
     insert_cat(con)
     insert_catname(con)

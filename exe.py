@@ -1,3 +1,4 @@
+import json
 from os.path import dirname as drn, abspath as abp
 from models import crawler, create_log, connectPSQL, ts
 from sqlalchemy.sql import select
@@ -7,9 +8,13 @@ if __name__ == '__main__':
     # target_cat = [1, 2, 3, 4, 5, 6, 7, 8]
     target_cat = [1, 2]
     max_page = 5
+
     _p = drn(abp(__file__))
     logger = create_log(_p+"/models/logger")
-    db_inst = connectPSQL()
+    with open(_p+'/user_info.json') as f:
+        info = json.load(f)
+
+    db_inst = connectPSQL(info)
     con = db_inst.engine.connect()
     time = []
     try:

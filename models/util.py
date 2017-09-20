@@ -35,14 +35,7 @@ def create_log(name):
 
 
 class connectPSQL:
-    def __init__(self):
-        info = {
-            'host': 'localhost',
-            'user': 'asahi',
-            'port': 5432,
-            'db': 'c_works'  # postgres
-        }
-
+    def __init__(self, info):
         db = "postgresql+psycopg2://{user}@{host}:{port}/{db}"\
              .format(**info)
         self.engine = create_engine(db)
