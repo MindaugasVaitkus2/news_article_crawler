@@ -5,3 +5,4 @@ nohup.out
 .env
 logger
 user_info.json
+.idea
