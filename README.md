@@ -1,4 +1,4 @@
-# Gunosy Article Scraper
+# Japanese News Article Crawler
 This script is aimed to scrape [Gunosy](https://gunosy.com/) to get article text data.
 The scraped data contains:
 
@@ -7,17 +7,16 @@ The scraped data contains:
 - Date
 - Category
 
-The data is considered to be used as data for training classifier or word embedding model.
-The data is stored in Postgres database.
+The data is considered to be used as data for training classifier or word embedding model. The data is stored in Postgres database.
 
 ## How to use 
 Clone this repository
 ```
-git clone https://github.com/asahi417/ArticleScraping
-cd ArticleScraping
+git clone https://github.com/asahi417/news_article_crawler
+cd news_article_crawler
 ```
 
-First, you need to create config file **user_info.json**:
+First, you need to create config file **password.json**:
 
 ```
 {

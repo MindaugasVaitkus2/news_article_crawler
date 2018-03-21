@@ -11,7 +11,7 @@ if __name__ == '__main__':
 
     _p = drn(abp(__file__))
     logger = create_log(_p+"/models/logger")
-    with open(_p+'/user_info.json') as f:
+    with open(_p+'/password.json') as f:
         info = json.load(f)
 
     db_inst = connectPSQL(info)
